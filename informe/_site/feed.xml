@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.0.0">Jekyll</generator><link href="https://ull-esit-pl-1920.github.io/=/p3-t1-handling-events-alu0101111254/feed.xml" rel="self" type="application/atom+xml" /><link href="https://ull-esit-pl-1920.github.io/=/p3-t1-handling-events-alu0101111254/" rel="alternate" type="text/html" /><updated>2020-03-03T15:43:51+00:00</updated><id>https://ull-esit-pl-1920.github.io/=/p3-t1-handling-events-alu0101111254/feed.xml</id><title type="html">Practica 3 PL</title><subtitle>Practica 3 de PL, en la cual aprendemos a usar eventos y jekyll.</subtitle><entry><title type="html">Tabs Exercise</title><link href="https://ull-esit-pl-1920.github.io/=/p3-t1-handling-events-alu0101111254/exercise/2020/03/03/tabs.html" rel="alternate" type="text/html" title="Tabs Exercise" /><published>2020-03-03T14:03:04+00:00</published><updated>2020-03-03T14:03:04+00:00</updated><id>https://ull-esit-pl-1920.github.io/=/p3-t1-handling-events-alu0101111254/exercise/2020/03/03/tabs</id><content type="html" xml:base="https://ull-esit-pl-1920.github.io/=/p3-t1-handling-events-alu0101111254/exercise/2020/03/03/tabs.html">&lt;tab-panel&gt;
+  &lt;div data-tabname=&quot;one&quot;&gt;Tab one&lt;/div&gt;
+  &lt;div data-tabname=&quot;two&quot;&gt;Tab two&lt;/div&gt;
+  &lt;div data-tabname=&quot;three&quot;&gt;Tab three&lt;/div&gt;
+&lt;/tab-panel&gt;
+&lt;script&gt;
+  function asTabs(node) {
+    var tabs = [];
+    for (var i = 0; i &lt; node.getElementsByTagName(&quot;div&quot;).length; i++) {
+      var child = node.getElementsByTagName(&quot;div&quot;)[i];
+      console.log(child.nodeType);
+      child.style.display = &quot;none&quot;;
+      tabs.push(child);
+    }
+    var tabList = document.createElement(&quot;div&quot;);
+    tabs.forEach(function(tab, i) {
+      var button = document.createElement(&quot;button&quot;);
+      button.textContent = tab.getAttribute(&quot;data-tabname&quot;);
+      button.addEventListener(&quot;click&quot;, function() { 
+        tabs.forEach(function(tab, j) {
+          if (j == i)
+            tab.style.display = &quot;&quot;;
+          else
+            tab.style.display = &quot;none&quot;;
+        });
+        tabList.childNodes.forEach(function(but,j){
+          if(j == i)
+            but.style.background = &quot;yellow&quot;;
+          else
+            but.style.background = &quot;&quot;;
+        })
+       });
+      tabList.appendChild(button);
+    });
+    node.insertBefore(tabList, node.firstChild);
+  }
+  asTabs(document.querySelector(&quot;tab-panel&quot;));
+
+&lt;/script&gt;</content><author><name></name></author><summary type="html">Tab one Tab two Tab three</summary></entry><entry><title type="html">Mouse Move trail Exercise</title><link href="https://ull-esit-pl-1920.github.io/=/p3-t1-handling-events-alu0101111254/exercise/2020/03/03/mouse-moved-exercie.html" rel="alternate" type="text/html" title="Mouse Move trail Exercise" /><published>2020-03-03T13:42:04+00:00</published><updated>2020-03-03T13:42:04+00:00</updated><id>https://ull-esit-pl-1920.github.io/=/p3-t1-handling-events-alu0101111254/exercise/2020/03/03/mouse-moved-exercie</id><content type="html" xml:base="https://ull-esit-pl-1920.github.io/=/p3-t1-handling-events-alu0101111254/exercise/2020/03/03/mouse-moved-exercie.html">&lt;style&gt;
+  .trail { /* className for the trail elements */
+    position: absolute;
+    height: 6px; width: 6px;
+    border-radius: 3px;
+    background: teal;
+  }
+  body {
+    height: 300px;
+  }
+&lt;/style&gt;
+
+&lt;script&gt;
+  // Your code here.
+  let contador = 0;
+  window.addEventListener(&quot;mousemove&quot;, event =&gt; {
+    let trail = document.createElement(&quot;div&quot;);
+    trail.className = &quot;trail&quot;;
+    trail.style.left = (event.pageX - 4) + &quot;px&quot;;
+    trail.style.top = (event.pageY - 4) + &quot;px&quot;;
+    document.body.appendChild(trail);
+    
+    if (contador &gt; 40) {
+        document.body.removeChild(document.getElementsByClassName(&quot;trail&quot;)[0]);
+    } else {
+        contador++;
+    }
+  });
+&lt;/script&gt;</content><author><name></name></author><summary type="html"></summary></entry><entry><title type="html">Welcome to Jekyll!</title><link href="https://ull-esit-pl-1920.github.io/=/p3-t1-handling-events-alu0101111254/jekyll/update/2020/03/03/welcome-to-jekyll.html" rel="alternate" type="text/html" title="Welcome to Jekyll!" /><published>2020-03-03T13:14:04+00:00</published><updated>2020-03-03T13:14:04+00:00</updated><id>https://ull-esit-pl-1920.github.io/=/p3-t1-handling-events-alu0101111254/jekyll/update/2020/03/03/welcome-to-jekyll</id><content type="html" xml:base="https://ull-esit-pl-1920.github.io/=/p3-t1-handling-events-alu0101111254/jekyll/update/2020/03/03/welcome-to-jekyll.html">&lt;p&gt;You’ll find this post in your &lt;code class=&quot;highlighter-rouge&quot;&gt;_posts&lt;/code&gt; directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run &lt;code class=&quot;highlighter-rouge&quot;&gt;jekyll serve&lt;/code&gt;, which launches a web server and auto-regenerates your site when a file is updated.&lt;/p&gt;
+
+&lt;p&gt;Jekyll requires blog post files to be named according to the following format:&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;YEAR-MONTH-DAY-title.MARKUP&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;Where &lt;code class=&quot;highlighter-rouge&quot;&gt;YEAR&lt;/code&gt; is a four-digit number, &lt;code class=&quot;highlighter-rouge&quot;&gt;MONTH&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;DAY&lt;/code&gt; are both two-digit numbers, and &lt;code class=&quot;highlighter-rouge&quot;&gt;MARKUP&lt;/code&gt; is the file extension representing the format used in the file. After that, include the necessary front matter. Take a look at the source for this post to get an idea about how it works.&lt;/p&gt;
+
+&lt;p&gt;Jekyll also offers powerful support for code snippets:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;print_hi&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;nb&quot;&gt;puts&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;Hi, &lt;/span&gt;&lt;span class=&quot;si&quot;&gt;#{&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;print_hi&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'Tom'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;#=&amp;gt; prints 'Hi, Tom' to STDOUT.&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;Check out the &lt;a href=&quot;https://jekyllrb.com/docs/home&quot;&gt;Jekyll docs&lt;/a&gt; for more info on how to get the most out of Jekyll. File all bugs/feature requests at &lt;a href=&quot;https://github.com/jekyll/jekyll&quot;&gt;Jekyll’s GitHub repo&lt;/a&gt;. If you have questions, you can ask them on &lt;a href=&quot;https://talk.jekyllrb.com/&quot;&gt;Jekyll Talk&lt;/a&gt;.&lt;/p&gt;</content><author><name></name></author><summary type="html">You’ll find this post in your _posts directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run jekyll serve, which launches a web server and auto-regenerates your site when a file is updated.</summary></entry></feed>
