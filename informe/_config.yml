@@ -22,7 +22,7 @@ title: Practica 3 PL
 email: alu0101111254@ull.edu.es
 description: >- # this means to ignore newlines until "baseurl:"
   Practica 3 de PL, en la cual aprendemos a usar eventos y jekyll.
-baseurl: "" # the subpath of your site, e.g. /blog
+baseurl: "/p3-t1-handling-events-alu0101111254" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: lucasBodLob
 github_username:  alu0101111254
