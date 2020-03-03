@@ -3,19 +3,19 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.6.1 -->
-<title>Mouse Move trail Exercise | Practica 3 PL</title>
+<title>Informe de práctica | Practica 3 PL</title>
 <meta name="generator" content="Jekyll v4.0.0" />
-<meta property="og:title" content="Mouse Move trail Exercise" />
+<meta property="og:title" content="Informe de práctica" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="Practica 3 de PL, en la cual aprendemos a usar eventos y jekyll." />
-<meta property="og:description" content="Practica 3 de PL, en la cual aprendemos a usar eventos y jekyll." />
-<link rel="canonical" href="https://ull-esit-pl-1920.github.io/p3-t1-handling-events-alu0101111254/exercise/2020/03/03/mouse-moved-exercie.html" />
-<meta property="og:url" content="https://ull-esit-pl-1920.github.io/p3-t1-handling-events-alu0101111254/exercise/2020/03/03/mouse-moved-exercie.html" />
+<meta name="description" content="Informe de práctica P3 Lucas Christian Bodson Lobato COSAS NAZIS Build y despliegue a gh-pages: bundle exec jekyll build -b “/practica3…” npm run deploy porque en el package.json añadi un script “deploy” : “gh-pages -d _site”" />
+<meta property="og:description" content="Informe de práctica P3 Lucas Christian Bodson Lobato COSAS NAZIS Build y despliegue a gh-pages: bundle exec jekyll build -b “/practica3…” npm run deploy porque en el package.json añadi un script “deploy” : “gh-pages -d _site”" />
+<link rel="canonical" href="https://ull-esit-pl-1920.github.io/p3-t1-handling-events-alu0101111254/exercise/2020/03/03/informe.html" />
+<meta property="og:url" content="https://ull-esit-pl-1920.github.io/p3-t1-handling-events-alu0101111254/exercise/2020/03/03/informe.html" />
 <meta property="og:site_name" content="Practica 3 PL" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2020-03-03T13:42:04+00:00" />
+<meta property="article:published_time" content="2020-03-03T16:10:04+00:00" />
 <script type="application/ld+json">
-{"description":"Practica 3 de PL, en la cual aprendemos a usar eventos y jekyll.","@type":"BlogPosting","url":"https://ull-esit-pl-1920.github.io/p3-t1-handling-events-alu0101111254/exercise/2020/03/03/mouse-moved-exercie.html","headline":"Mouse Move trail Exercise","datePublished":"2020-03-03T13:42:04+00:00","dateModified":"2020-03-03T13:42:04+00:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://ull-esit-pl-1920.github.io/p3-t1-handling-events-alu0101111254/exercise/2020/03/03/mouse-moved-exercie.html"},"@context":"https://schema.org"}</script>
+{"description":"Informe de práctica P3 Lucas Christian Bodson Lobato COSAS NAZIS Build y despliegue a gh-pages: bundle exec jekyll build -b “/practica3…” npm run deploy porque en el package.json añadi un script “deploy” : “gh-pages -d _site”","@type":"BlogPosting","url":"https://ull-esit-pl-1920.github.io/p3-t1-handling-events-alu0101111254/exercise/2020/03/03/informe.html","headline":"Informe de práctica","datePublished":"2020-03-03T16:10:04+00:00","dateModified":"2020-03-03T16:10:04+00:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://ull-esit-pl-1920.github.io/p3-t1-handling-events-alu0101111254/exercise/2020/03/03/informe.html"},"@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/p3-t1-handling-events-alu0101111254/assets/main.css"><link type="application/atom+xml" rel="alternate" href="https://ull-esit-pl-1920.github.io/p3-t1-handling-events-alu0101111254/feed.xml" title="Practica 3 PL" /></head>
 <body><header class="site-header" role="banner">
@@ -38,45 +38,24 @@
         <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
 
   <header class="post-header">
-    <h1 class="post-title p-name" itemprop="name headline">Mouse Move trail Exercise</h1>
+    <h1 class="post-title p-name" itemprop="name headline">Informe de práctica</h1>
     <p class="post-meta">
-      <time class="dt-published" datetime="2020-03-03T13:42:04+00:00" itemprop="datePublished">Mar 3, 2020
+      <time class="dt-published" datetime="2020-03-03T16:10:04+00:00" itemprop="datePublished">Mar 3, 2020
       </time></p>
   </header>
 
   <div class="post-content e-content" itemprop="articleBody">
-    <style>
-  .trail { /* className for the trail elements */
-    position: absolute;
-    height: 6px; width: 6px;
-    border-radius: 3px;
-    background: teal;
-  }
-  body {
-    height: 300px;
-  }
-</style>
+    <h1 id="informe-de-práctica-p3">Informe de práctica P3</h1>
+<h2 id="lucas-christian-bodson-lobato">Lucas Christian Bodson Lobato</h2>
 
-<script>
-  // Your code here.
-  let contador = 0;
-  window.addEventListener("mousemove", event => {
-    let trail = document.createElement("div");
-    trail.className = "trail";
-    trail.style.left = (event.pageX - 4) + "px";
-    trail.style.top = (event.pageY - 4) + "px";
-    document.body.appendChild(trail);
-    
-    if (contador > 40) {
-        document.body.removeChild(document.getElementsByClassName("trail")[0]);
-    } else {
-        contador++;
-    }
-  });
-</script>
+<h2 id="cosas-nazis">COSAS NAZIS</h2>
 
+<h2 id="build-y-despliegue-a-gh-pages">Build y despliegue a gh-pages:</h2>
+<p>bundle exec jekyll build -b “/practica3…”
+npm run deploy
+porque en el package.json añadi un script “deploy” : “gh-pages -d _site”</p>
 
-  </div><a class="u-url" href="/p3-t1-handling-events-alu0101111254/exercise/2020/03/03/mouse-moved-exercie.html" hidden></a>
+  </div><a class="u-url" href="/p3-t1-handling-events-alu0101111254/exercise/2020/03/03/informe.html" hidden></a>
 </article>
 
       </div>

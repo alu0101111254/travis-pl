@@ -9,3 +9,9 @@ categories: exercise
 ## Lucas Christian Bodson Lobato
 
 ## COSAS NAZIS
+
+
+## Build y despliegue a gh-pages:
+bundle exec jekyll build -b "/practica3..."
+npm run deploy
+porque en el package.json añadi un script "deploy" : "gh-pages -d _site"
