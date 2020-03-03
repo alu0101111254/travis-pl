@@ -3,17 +3,19 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.6.1 -->
-<title>Practica 3 PL | Practica 3 de PL, en la cual aprendemos a usar eventos y jekyll.</title>
+<title>Tabs Exercise | Practica 3 PL</title>
 <meta name="generator" content="Jekyll v4.0.0" />
-<meta property="og:title" content="Practica 3 PL" />
+<meta property="og:title" content="Tabs Exercise" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="Practica 3 de PL, en la cual aprendemos a usar eventos y jekyll." />
-<meta property="og:description" content="Practica 3 de PL, en la cual aprendemos a usar eventos y jekyll." />
-<link rel="canonical" href="/404.html" />
-<meta property="og:url" content="/404.html" />
+<meta name="description" content="Tab one Tab two Tab three" />
+<meta property="og:description" content="Tab one Tab two Tab three" />
+<link rel="canonical" href="/exercise/2020/03/03/tabs.html" />
+<meta property="og:url" content="/exercise/2020/03/03/tabs.html" />
 <meta property="og:site_name" content="Practica 3 PL" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2020-03-03T14:03:04+00:00" />
 <script type="application/ld+json">
-{"description":"Practica 3 de PL, en la cual aprendemos a usar eventos y jekyll.","headline":"Practica 3 PL","@type":"WebPage","url":"/404.html","@context":"https://schema.org"}</script>
+{"description":"Tab one Tab two Tab three","headline":"Tabs Exercise","dateModified":"2020-03-03T14:03:04+00:00","datePublished":"2020-03-03T14:03:04+00:00","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"/exercise/2020/03/03/tabs.html"},"url":"/exercise/2020/03/03/tabs.html","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="/feed.xml" title="Practica 3 PL" /></head>
 <body><header class="site-header" role="banner">
@@ -33,26 +35,59 @@
 </header>
 <main class="page-content" aria-label="Content">
       <div class="wrapper">
-        <style type="text/css" media="screen">
-  .container {
-    margin: 10px auto;
-    max-width: 600px;
-    text-align: center;
-  }
-  h1 {
-    margin: 30px 0;
-    font-size: 4em;
-    line-height: 1;
-    letter-spacing: -1px;
-  }
-</style>
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
 
-<div class="container">
-  <h1>404</h1>
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Tabs Exercise</h1>
+    <p class="post-meta">
+      <time class="dt-published" datetime="2020-03-03T14:03:04+00:00" itemprop="datePublished">Mar 3, 2020
+      </time></p>
+  </header>
 
-  <p><strong>Page not found :(</strong></p>
-  <p>The requested page could not be found.</p>
-</div>
+  <div class="post-content e-content" itemprop="articleBody">
+    <tab-panel>
+  <div data-tabname="one">Tab one</div>
+  <div data-tabname="two">Tab two</div>
+  <div data-tabname="three">Tab three</div>
+</tab-panel>
+<script>
+  function asTabs(node) {
+    var tabs = [];
+    for (var i = 0; i < node.getElementsByTagName("div").length; i++) {
+      var child = node.getElementsByTagName("div")[i];
+      console.log(child.nodeType);
+      child.style.display = "none";
+      tabs.push(child);
+    }
+    var tabList = document.createElement("div");
+    tabs.forEach(function(tab, i) {
+      var button = document.createElement("button");
+      button.textContent = tab.getAttribute("data-tabname");
+      button.addEventListener("click", function() { 
+        tabs.forEach(function(tab, j) {
+          if (j == i)
+            tab.style.display = "";
+          else
+            tab.style.display = "none";
+        });
+        tabList.childNodes.forEach(function(but,j){
+          if(j == i)
+            but.style.background = "yellow";
+          else
+            but.style.background = "";
+        })
+       });
+      tabList.appendChild(button);
+    });
+    node.insertBefore(tabList, node.firstChild);
+  }
+  asTabs(document.querySelector("tab-panel"));
+
+</script>
+
+
+  </div><a class="u-url" href="/exercise/2020/03/03/tabs.html" hidden></a>
+</article>
 
       </div>
     </main><footer class="site-footer h-card">
