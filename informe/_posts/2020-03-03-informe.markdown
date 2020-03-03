@@ -1,0 +1,11 @@
+---
+layout: post
+title:  "Informe de práctica"
+date:   2020-03-03 16:10:04 +0000
+categories: exercise
+---
+
+# Informe de práctica P3 
+## Lucas Christian Bodson Lobato
+
+## COSAS NAZIS

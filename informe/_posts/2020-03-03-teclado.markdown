@@ -1,0 +1,15 @@
+---
+layout: post
+title:  "Censored Keyboard"
+date:   2020-03-03 16:07:04 +0000
+categories: exercise
+---
+
+<input type="text">
+<script>
+  var field = document.querySelector("input");  
+  field.addEventListener("keydown", function(event) { 
+    if (event.keyCode == 87 || event.keyCode == 81 || event.keyCode == 88) 
+      event.preventDefault(); 
+  });
+</script>
