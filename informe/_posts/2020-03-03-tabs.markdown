@@ -1,0 +1,46 @@
+---
+layout: post
+title:  "Tabs Exercise"
+date:   2020-03-03 14:03:04 +0000
+categories: exercise
+---
+
+<tab-panel>
+  <div data-tabname="one">Tab one</div>
+  <div data-tabname="two">Tab two</div>
+  <div data-tabname="three">Tab three</div>
+</tab-panel>
+<script>
+  function asTabs(node) {
+    var tabs = [];
+    for (var i = 0; i < node.getElementsByTagName("div").length; i++) {
+      var child = node.getElementsByTagName("div")[i];
+      console.log(child.nodeType);
+      child.style.display = "none";
+      tabs.push(child);
+    }
+    var tabList = document.createElement("div");
+    tabs.forEach(function(tab, i) {
+      var button = document.createElement("button");
+      button.textContent = tab.getAttribute("data-tabname");
+      button.addEventListener("click", function() { 
+        tabs.forEach(function(tab, j) {
+          if (j == i)
+            tab.style.display = "";
+          else
+            tab.style.display = "none";
+        });
+        tabList.childNodes.forEach(function(but,j){
+          if(j == i)
+            but.style.background = "yellow";
+          else
+            but.style.background = "";
+        })
+       });
+      tabList.appendChild(button);
+    });
+    node.insertBefore(tabList, node.firstChild);
+  }
+  asTabs(document.querySelector("tab-panel"));
+
+</script>
