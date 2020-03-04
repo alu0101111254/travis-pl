@@ -1,21 +1,14 @@
 {
   "name": "p3pl",
   "version": "1.0.0",
-  "description": "",
+  "description": "hola",
   "main": "index.js",
   "scripts": {
+    "deploy": "gh-pages -d _site",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/ULL-ESIT-PL-1920/p3-t1-handling-events-alu0101111254.git"
-  },
-  "author": "",
+  "author": "lucas bodson",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/ULL-ESIT-PL-1920/p3-t1-handling-events-alu0101111254/issues"
-  },
-  "homepage": "https://ull-esit-pl-1920.github.io/p3-t1-handling-events-alu0101111254/",
   "dependencies": {
     "gh-pages": "^2.2.0"
   }
