@@ -2,7 +2,7 @@ language: ruby
 
 script:
  - bundle install
- - bundle exec rake test
+ - bundle exec rake
 
 cache:
   directories:

@@ -4,6 +4,7 @@
   "description": "hola",
   "main": "index.js",
   "scripts": {
+    "build":" bundle exec jekyll build -b \"p3-t1-handling-events-alu0101111254\"" ,
     "deploy": "gh-pages -d _site",
     "test": "echo \"Error: no test specified\" && exit 1"
   },

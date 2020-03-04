@@ -3,7 +3,7 @@ abort('Please run this using `bundle exec rake`') unless ENV["BUNDLE_BIN_PATH"]
 require 'html-proofer'
 
 task :build do
-  sh 'bundle exec jekyll build -b "p3-t1-handling-events-alu0101111254"'
+  sh 'bundle exec jekyll build'
 end
 desc "Test the website"
 task :test => [:build] do

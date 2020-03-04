@@ -7,11 +7,24 @@ categories: exercise
 
 # Informe de práctica P3 
 ## Lucas Christian Bodson Lobato
+Página de travis https://travis-ci.com/alu0101111254/travis-pl/jobs/294050635
 
-## COSAS NAZIS
 
+## Resumen Event Handling
+Los Event handlers  nos permiten detectar eventos que ocurran en el la web, ya que es imposible depender solamente de la asincronía de js, para añadir un handler usamos el comando `addEventLister`.
 
+Cada evento tiene un tipo , por ejemplo `"keydown"` significa que se ha apretado una tecla del teclado. La mayoria de eventos se añaden a una parte específica del documento html.
+
+Cuando se llama a un handler se le pasa un objeto evento con información adicional sobre este, este objeto tambien tiene métodos para evitar que se siga propagando el evento, y parar el handler por defecto del browser.
+
+La mayor parte de las acciones del usuario generan eventos, como usar el teclado, bajar usando el Scroll, mover el raton, hacer clicks... pero tambien hay eventos generados por el navegador, como por ejemplo al cargarse un archivo se genera un evento load.
+
+## Posts de jekyll:
+Jekyll funciona como un blog, ya que está formado por posts, estos posts son ficheros de tipo markdown, con formato `año-mes-dia.markdown` en el cual escribiremos lo que queramos en dicho post, escribiremos un código de js con formato html. 
 ## Build y despliegue a gh-pages:
-bundle exec jekyll build -b "/practica3..."
-npm run deploy
-porque en el package.json añadi un script "deploy" : "gh-pages -d _site"
+Para hacer el build de la carpeta _site es necesario añadir un argumento opcional -b, ya que sino al generarse los href se generan algunos de ellos sin usar baseurl.
+
+Ej :`bundle exec jekyll build -b "/practica3..."`
+
+Tras esto para hacer el `gh-pages -d _site` lo añadimos a un script en el package.lock, en mi caso llamado deploy, y luego basta con hacer 
+`npm run deploy`
